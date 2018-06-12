@@ -4,7 +4,7 @@ apply plugin: 'org.greenrobot.greendao'
 
 android {
     compileSdkVersion 26
-    buildToolsVersion "26.0.2"
+    buildToolsVersion '26.0.2'
     defaultConfig {
         applicationId "com.oraclechain.pocketeos"
         minSdkVersion 19
@@ -52,6 +52,9 @@ android {
     }
 }
 
+configurations.all {
+    resolutionStrategy.force 'com.google.code.findbugs:jsr305:1.3.9'
+}
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
@@ -93,14 +96,12 @@ dependencies {
     implementation 'com.contrarywind:Android-PickerView:3.2.5'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
     implementation 'com.google.guava:guava:23.0-android'
-    implementation 'com.android.support:multidex:1.0.1'
+    implementation 'com.android.support:multidex:1.0.3'
     //eventbus
     implementation 'org.greenrobot:eventbus:3.0.0'
     //微信登陆分享
     implementation 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:+'
-
     //xrecycleview
     compile 'com.jcodecraeer:xrecyclerview:1.5.9'
-
     compile 'io.github.novacrypto:BIP32:0.0.8'
 }
